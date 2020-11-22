@@ -1,0 +1,23 @@
+{
+    "bundles": {
+        "Bolt\\Core\\Bridge\\Symfony\\Bundle\\BoltBundle": ["all"]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/",
+        "public/": "%PUBLIC_DIR%/",
+        "src/": "%SRC_DIR%/"
+    },
+    "composer-scripts": {
+        "bolt:copy-assets --ansi": "symfony-cmd",
+        "cache:clear --no-warmup --ansi": "symfony-cmd",
+        "assets:install %PUBLIC_DIR% --ansi": "symfony-cmd"
+    },
+    "gitignore": [
+        "/config/bolt/*_local.yaml",
+        "/config/packages/local",
+        "/config/routes/local",
+        "/public/files/*",
+        "/public/themes/*",
+        "/public/thumbs/*"
+    ]
+}
